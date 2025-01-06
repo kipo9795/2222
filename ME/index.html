@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventure Math Quiz</title>
+  <link rel="shortcut icon" href="image2.jpg" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-image: url('e08538a566a31a6a65e3272aff945aa9.jpg'); /* Path to your image */
+            background-size: cover; /* Makes the image cover the entire page */
+            background-repeat: no-repeat; /* Prevents image repetition */
+            background-position: center; /* Centers the background image */
+            height: 100vh; /* Ensures the page takes full viewport height */
+            margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4caf50;
+      color: white;
+      padding: 20px;
+      font-size: 24px;
+    }
+    .container {
+      margin: 20px auto;
+      max-width: 600px;
+    }
+    .question {
+      font-size: 22px;
+      margin: 20px 0;
+    }
+    .drag-items, .drop-zone {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px;
+    }
+    .item {
+      width: 70px;
+      height: 70px;
+      background-color: #ffcccb;
+      border-radius: 10px;
+      border: 2px solid #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: grab;
+      font-size: 20px;
+      transition: transform 0.2s ease;
+    }
+    .item:active {
+      transform: scale(1.1);
+    }
+    .drop {
+      width: 70px;
+      height: 70px;
+      background-color: #d3d3d3;
+      border: 2px dashed #333;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .correct {
+      background-color: #90ee90 !important;
+      color: white;
+      font-weight: bold;
+    }
+    .feedback {
+      font-size: 18px;
+      margin-top: 10px;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .feedback.show {
+      opacity: 1;
+    }
+    .score, .timer {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .next-button {
+      margin: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      color: white;
+      background-color: #4caf50;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .next-button:hover {
+      background-color: #45a049;
+    }
+    .difficulty {
+      margin: 20px 0;
+    }
+    .difficulty button {
+      margin: 0 10px;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+    }
+    .difficulty button.easy { background-color: #4caf50; }
+    .difficulty button.medium { background-color: #ffa500; }
+    .difficulty button.hard { background-color: #f44336; }
+  </style>
+</head>
+<body>
+  <header>Adventure Math Quiz</header>
+  <div class="container">
+    <div class="difficulty">
+      <button class="easy">Easy</button>
+      <button class="medium">Medium</button>
+      <button class="hard">Hard</button>
+    </div>
+    <div class="question" id="question">Select a level to start!</div>
+    <div class="drag-items" id="drag-items"></div>
+    <div class="drop-zone">
+      <div class="drop" id="drop"></div>
+    </div>
+    <div class="feedback" id="feedback"></div>
+    <div class="timer" id="timer">Time left: --</div>
+    <div class="score" id="score">Score: 0 / 0</div>
+    <button class="next-button" id="next-button" style="display: none;">Next Question</button>
+  </div>
+  <script src="script.js">
+  </script>
+</body>
+</html>
